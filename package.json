@@ -1,16 +1,17 @@
 {
-  "name": "vite-typescript-npm-package",
+  "name": "mona-js-sdk",
   "version": "1.0.0",
-  "description": "Vite TypeScript library npm package template",
-  "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
-  "homepage": "https://github.com/jasonsturges/vite-typescript-npm-package",
-  "repository": "github:jasonsturges/vite-typescript-npm-package",
+  "description": "Mona JS SDK wrapping the Mona HTTP API",
+  "author": "Benjy Larcher (https://benjylarcher.com)",
+  "homepage": "https://github.com/Benjythebee/Mona-JS-SDK",
+  "repository": "github:Benjythebee/Mona-JS-SDK",
   "license": "ISC",
   "keywords": [
-    "vite",
+    "mona",
     "typescript",
-    "npm",
-    "package"
+    "js",
+    "sdk",
+    "api"
   ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -32,6 +33,7 @@
     "@types/node": "^20.11.24",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
+    "dotenv": "^16.4.5",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -42,8 +44,5 @@
     "vite": "^5.2.13",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^2.0.5"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5"
   }
 }
