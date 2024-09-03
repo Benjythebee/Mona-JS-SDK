@@ -1,0 +1,49 @@
+{
+  "name": "vite-typescript-npm-package",
+  "version": "1.0.0",
+  "description": "Vite TypeScript library npm package template",
+  "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
+  "homepage": "https://github.com/jasonsturges/vite-typescript-npm-package",
+  "repository": "github:jasonsturges/vite-typescript-npm-package",
+  "license": "ISC",
+  "keywords": [
+    "vite",
+    "typescript",
+    "npm",
+    "package"
+  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc && vite build --watch",
+    "start": "vite --host --open",
+    "build": "tsc && vite build",
+    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test": "vitest",
+    "lint:scripts": "eslint ./src --ext .ts",
+    "format:scripts": "prettier ./src --write"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "dts-bundle-generator": "^9.5.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.2",
+    "vite": "^5.2.13",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
