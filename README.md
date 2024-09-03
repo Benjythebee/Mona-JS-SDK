@@ -2,6 +2,10 @@
 
 A wrapper written in typescript that wraps around [the Monaverse API](https://monaverse.readme.io/reference/getting-started-2);
 
+## How to use:
+
+1. Install with `npm i mona-js-sdk`
+
 ## Dev
 
 1. Git clone the repo;

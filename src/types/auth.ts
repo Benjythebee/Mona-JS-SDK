@@ -14,10 +14,9 @@ export type InvalidBearerToken = {
   }[];
 };
 
-
 export type MonaUser = {
-  "wallets": string[],
-  "email": string,
-  "username": string,
-  "name": string
-}
+  wallets: string[];
+  email: string;
+  username: string;
+  name: string;
+};
