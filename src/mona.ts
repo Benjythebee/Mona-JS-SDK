@@ -54,6 +54,11 @@ export class MonaAPI {
         MonaAPI.localStorage = new LocalStorage(autoLogin?.localStorageKey || 'x-mona-auth')
 
         this.onRefreshToken.add(this.automaticallyLogin)
+
+        const prev = MonaAPI.localStorage.get()
+        if(prev){
+            this.onRefreshToken.notifyObservers({refreshToken:prev})
+        }
     }
 
     automaticallyLogin = async ({refreshToken}:{refreshToken:string})=>{
