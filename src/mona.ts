@@ -1,3 +1,4 @@
+import { LocalStorage } from "libs/localStorage"
 import { Observable } from "./libs/observable"
 import { AnimationResponse, InvalidBearerToken, InvalidWallet, MonaUser, OTPMIssingError, Token, TokenAnimatable } from "types"
 
@@ -32,6 +33,7 @@ export class MonaAPI {
     static key= ''
     static bearer=''
     static refreshToken = ''
+    static localStorage:LocalStorage<string>;
     static autoLoginParams:MonaAPIProps['autoLogin'] = {
         enabled:false
     }
@@ -48,6 +50,8 @@ export class MonaAPI {
         MonaAPI.key = apiKey
 
         MonaAPI.autoLoginParams = autoLogin || MonaAPI.autoLoginParams
+
+        MonaAPI.localStorage = new LocalStorage(autoLogin?.localStorageKey || 'x-mona-auth')
 
         this.onRefreshToken.add(this.automaticallyLogin)
     }
@@ -78,6 +82,7 @@ export class MonaAPI {
         if('access' in isVerified){
             MonaAPI.bearer = isVerified.access
             MonaAPI.refreshToken = isVerified.refresh
+            MonaAPI.localStorage.set(isVerified.refresh)
             this.onRefreshToken.notifyObservers({refreshToken:isVerified.refresh})
             return {success:true}
         }else {
@@ -94,6 +99,7 @@ export class MonaAPI {
         if('access' in isRefreshed){
             MonaAPI.bearer = isRefreshed.access
             MonaAPI.refreshToken = isRefreshed.refresh
+            MonaAPI.localStorage.set(isRefreshed.refresh)
             this.onRefreshToken.notifyObservers({refreshToken:isRefreshed.refresh})
             return {success:true}
         }else {
@@ -160,6 +166,7 @@ export class MonaAPI {
     logout = () => {
         MonaAPI.bearer = ''
         MonaAPI.refreshToken = ''
+        MonaAPI.localStorage.remove()
     }
 
     private _fetch = async <Data extends any,E extends OTPMIssingError | InvalidBearerToken | InvalidWallet = never>(url: string, options: RequestInit) => {
