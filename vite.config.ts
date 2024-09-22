@@ -5,8 +5,9 @@ import { defineConfig, UserConfig } from "vite"
 
 export default defineConfig({
   base: "./",
-  plugins: [dts({ rollupTypes: true })],
+  plugins: [dts({ rollupTypes: false, exclude: "**/*.test.ts" })],
   build: {
+    emptyOutDir: true,
     sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
