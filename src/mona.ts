@@ -1,6 +1,6 @@
 import { LocalStorage } from "./libs/localStorage"
 import { Observable } from "./libs/observable"
-import { AnimationResponse, InvalidBearerToken, InvalidWallet, MonaUser, OTPMIssingError, Token, TokenAnimatable } from "types"
+import { AnimationResponse, InvalidBearerToken, InvalidWallet, MonaUser, OTPMIssingError, Token, TokenAnimatable } from "./types"
 
 export type MonaAPIProps = {
     /**

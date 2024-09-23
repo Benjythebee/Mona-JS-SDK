@@ -1,6 +1,6 @@
 type Callback<T = void> = (data: T) => void;
 
-class Observer<T = void> {
+export class Observer<T = void> {
     uuid: string = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
     constructor(
         private observable: Observable<T>,
