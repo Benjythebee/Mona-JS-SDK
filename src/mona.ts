@@ -119,7 +119,7 @@ export class MonaAPI {
         })
 
         if('error' in user){
-            return {error:'Could not get user'}
+            return {error:'Could not get user',originalError:user.error}
         }else{
             return user
         }
