@@ -1,6 +1,6 @@
 {
   "name": "mona-js-sdk",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Mona JS SDK wrapping the Monaverse HTTP API",
   "author": "Benjy Larcher (https://benjylarcher.com)",
   "homepage": "https://github.com/Benjythebee/Mona-JS-SDK",
