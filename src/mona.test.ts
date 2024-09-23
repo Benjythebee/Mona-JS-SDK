@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import {MonaAPI} from '.'
+import MonaAPI from '.'
 const monaAPI = import.meta.env.VITE_MONA_APP_ID
 
 const mona = new MonaAPI({
