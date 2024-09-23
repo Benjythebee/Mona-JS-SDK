@@ -11,9 +11,7 @@ export class LocalStorage<T extends any> {
     constructor(key: string) {
         this.key = key
 
-        if(typeof window !== 'undefined'){
-            this.nodeJsMap = new Map()
-        }
+        this.nodeJsMap = new Map()
     }
 
     isBrowser = () => typeof window !== 'undefined'
